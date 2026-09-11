@@ -1,7 +1,12 @@
+/* =========================================================
+   CARZONE PERFORMANCE
+   LUXURY AUTOMOTIVE STYLE
+   ========================================================= */
+
 * {
-    box-sizing: border-box;
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
 }
 
 html {
@@ -9,409 +14,539 @@ html {
 }
 
 body {
+    font-family: Arial, Helvetica, sans-serif;
     background: #050505;
     color: white;
-    font-family: Arial, Helvetica, sans-serif;
-    overflow-x: hidden;
 }
 
-
-/* HEADER */
+/* =========================================================
+   HEADER
+   ========================================================= */
 
 .header {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-
-    padding: 30px 7%;
-
+    height: 80px;
     display: flex;
-    justify-content: space-between;
     align-items: center;
-
-    z-index: 20;
+    justify-content: space-between;
+    padding: 0 7%;
+    background: rgba(5, 5, 5, 0.95);
+    border-bottom: 1px solid #222;
+    position: sticky;
+    top: 0;
+    z-index: 100;
 }
 
 .logo {
     font-size: 25px;
     font-weight: 900;
-    letter-spacing: 5px;
+    letter-spacing: 3px;
 }
 
 .logo span {
-    color: #777;
+    color: #ff3030;
 }
 
 .header-right {
+    font-size: 11px;
+    letter-spacing: 3px;
     color: #777;
-    font-size: 10px;
-    letter-spacing: 4px;
 }
 
-
-/* HERO */
+/* =========================================================
+   HERO
+   ========================================================= */
 
 .hero {
-    min-height: 760px;
-
-    position: relative;
-
+    min-height: 500px;
     display: flex;
     align-items: center;
-
-    padding: 130px 8%;
-
-    overflow: hidden;
-
+    justify-content: space-between;
+    padding: 80px 9%;
     background:
-        radial-gradient(
-            circle at 75% 50%,
-            #292929 0%,
-            #0b0b0b 35%,
-            #050505 70%
-        );
-}
-
-.hero::before {
-    content: "";
-
-    position: absolute;
-
-    width: 700px;
-    height: 700px;
-
-    right: -250px;
-    top: 50px;
-
-    border-radius: 50%;
-
-    border: 1px solid #333;
-
-    box-shadow:
-        0 0 100px rgba(255,255,255,0.04),
-        inset 0 0 100px rgba(255,255,255,0.03);
+        radial-gradient(circle at 80% 50%, #241010 0%, transparent 35%),
+        linear-gradient(135deg, #090909, #030303);
 }
 
 .hero-content {
-    position: relative;
-    z-index: 3;
-
     max-width: 650px;
-
-    animation: heroEnter 1s ease;
 }
 
 .eyebrow {
-    color: #777;
-
-    font-size: 11px;
-
-    letter-spacing: 5px;
-
-    margin-bottom: 20px;
+    color: #ff3030;
+    font-size: 12px;
+    letter-spacing: 4px;
+    font-weight: bold;
+    margin-bottom: 18px;
 }
 
 .hero h1 {
-    font-size: clamp(90px, 14vw, 180px);
-
-    line-height: 0.8;
-
-    letter-spacing: -10px;
-
+    font-size: clamp(65px, 9vw, 130px);
+    line-height: 0.85;
+    letter-spacing: -5px;
     font-weight: 900;
 }
 
 .hero h1 span {
-    color: #666;
+    color: #ff3030;
 }
 
 .hero p {
     color: #999;
-
-    max-width: 500px;
-
+    max-width: 550px;
     line-height: 1.7;
-
-    margin-top: 35px;
+    margin-top: 30px;
+    font-size: 16px;
 }
 
 .hero-button {
     display: inline-block;
-
     margin-top: 35px;
-
-    padding: 18px 35px;
-
-    background: white;
-
-    color: black;
-
+    padding: 15px 30px;
+    background: #ff3030;
+    color: white;
     text-decoration: none;
-
-    font-size: 12px;
-
     font-weight: bold;
-
-    letter-spacing: 3px;
-
-    transition: 0.3s;
+    letter-spacing: 2px;
+    transition: 0.25s;
 }
 
 .hero-button:hover {
-    background: #aaa;
+    background: white;
+    color: black;
     transform: translateY(-3px);
 }
 
 .hero-speed {
-    position: absolute;
-
-    right: 12%;
-    top: 50%;
-
-    transform: translateY(-50%);
-
-    text-align: center;
-
-    z-index: 2;
-
-    opacity: 0.8;
+    text-align: right;
 }
 
 .speed-number {
-    font-size: 150px;
-
+    font-size: 120px;
     font-weight: 900;
-
     line-height: 0.8;
-
-    color: #151515;
-
-    -webkit-text-stroke: 1px #333;
 }
 
 .speed-unit {
-    color: #666;
-
-    letter-spacing: 8px;
-
-    margin-top: 20px;
+    color: #ff3030;
+    letter-spacing: 5px;
+    font-weight: bold;
 }
 
-
-/* STATS */
+/* =========================================================
+   STATS
+   ========================================================= */
 
 .stats {
     display: grid;
-
-    grid-template-columns:
-        repeat(3, 1fr);
-
+    grid-template-columns: repeat(3, 1fr);
     border-top: 1px solid #222;
     border-bottom: 1px solid #222;
+    background: #090909;
 }
 
 .stats div {
-    padding: 35px;
-
+    padding: 30px;
     text-align: center;
-
     border-right: 1px solid #222;
 }
 
 .stats strong {
     display: block;
-
-    font-size: 36px;
-
-    margin-bottom: 8px;
+    font-size: 30px;
 }
 
 .stats span {
+    display: block;
     color: #666;
-
     font-size: 10px;
-
     letter-spacing: 3px;
+    margin-top: 7px;
 }
 
+/* =========================================================
+   SEARCH DATABASE
+   ========================================================= */
 
-/* SECTIONS */
-
-.race-section,
-.performance-section {
-    padding: 110px 7%;
+.search-section {
+    padding: 100px 8%;
+    background: #070707;
 }
 
-.section-heading h2 {
-    font-size: 60px;
-
-    line-height: 1;
-
-    letter-spacing: -3px;
+.search-heading {
+    text-align: center;
+    max-width: 800px;
+    margin: auto;
 }
 
-.section-heading h2 span {
+.search-heading h2 {
+    font-size: 55px;
+    letter-spacing: -2px;
+}
+
+.search-heading h2 span {
+    color: #ff3030;
+}
+
+.search-heading p {
+    color: #777;
+    margin-top: 15px;
+}
+
+/* GROTE GOOGLE-ACHTIGE ZOEKBALK */
+
+.search-box {
+    max-width: 850px;
+    margin: 45px auto 20px;
+    position: relative;
+}
+
+#carSearch {
+    width: 100%;
+    height: 70px;
+    border-radius: 40px;
+    border: 1px solid #333;
+    background: #111;
+    color: white;
+    padding: 0 30px;
+    font-size: 19px;
+    outline: none;
+    transition: 0.25s;
+    box-shadow: 0 10px 40px rgba(0,0,0,0.4);
+}
+
+#carSearch:focus {
+    border-color: #ff3030;
+    box-shadow: 0 0 30px rgba(255,48,48,0.15);
+}
+
+#carSearch::placeholder {
     color: #666;
 }
 
-.section-heading p {
-    margin-top: 15px;
+/* =========================================================
+   SEARCH SUGGESTIONS
+   ========================================================= */
 
+#suggestions {
+    position: absolute;
+    top: 78px;
+    left: 0;
+    right: 0;
+    background: #111;
+    border: 1px solid #292929;
+    border-radius: 15px;
+    overflow: hidden;
+    z-index: 50;
+    box-shadow: 0 20px 50px rgba(0,0,0,0.6);
+}
+
+.suggestion {
+    padding: 17px 25px;
+    cursor: pointer;
+    border-bottom: 1px solid #222;
+    transition: 0.2s;
+}
+
+.suggestion:hover {
+    background: #1c1c1c;
+    padding-left: 32px;
+}
+
+.suggestion strong {
+    display: block;
+}
+
+.suggestion small {
     color: #777;
 }
 
+/* =========================================================
+   CAR RESULT
+   ========================================================= */
 
-/* CONTROLS */
+.car-result {
+    max-width: 850px;
+    margin: 35px auto 0;
+    background: #101010;
+    border: 1px solid #292929;
+    border-radius: 20px;
+    overflow: hidden;
+    display: none;
+    animation: resultAppear 0.35s ease;
+}
+
+@keyframes resultAppear {
+    from {
+        opacity: 0;
+        transform: translateY(15px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.car-result-image {
+    height: 280px;
+    background:
+        radial-gradient(circle, #2b1111, #080808 65%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.car-result-image span {
+    font-size: 100px;
+}
+
+.car-result-info {
+    padding: 35px;
+}
+
+.car-result-type {
+    color: #ff3030;
+    font-size: 11px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+}
+
+.car-result h3 {
+    font-size: 36px;
+    margin-top: 8px;
+}
+
+.car-year {
+    color: #777;
+    margin-top: 5px;
+}
+
+/* =========================================================
+   SPECIFICATIONS
+   ========================================================= */
+
+.spec-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    margin-top: 30px;
+    border-top: 1px solid #292929;
+    border-bottom: 1px solid #292929;
+}
+
+.spec-box {
+    padding: 25px 15px;
+    text-align: center;
+    border-right: 1px solid #292929;
+}
+
+.spec-box:last-child {
+    border-right: none;
+}
+
+.spec-box strong {
+    display: block;
+    font-size: 25px;
+}
+
+.spec-box span {
+    display: block;
+    margin-top: 7px;
+    color: #777;
+    font-size: 10px;
+    letter-spacing: 2px;
+}
+
+/* =========================================================
+   RACE SECTION
+   ========================================================= */
+
+.race-section {
+    padding: 100px 8%;
+    background: #050505;
+}
+
+.section-heading {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.section-heading h2 {
+    font-size: 55px;
+}
+
+.section-heading h2 span {
+    color: #ff3030;
+}
+
+.section-heading p {
+    color: #777;
+    margin-top: 12px;
+}
+
+/* =========================================================
+   CONTROLS
+   ========================================================= */
 
 .controls {
-    margin-top: 45px;
-
     display: grid;
-
-    grid-template-columns:
-        1fr 1fr 1fr 1fr 140px;
-
-    gap: 12px;
-
-    background: #0e0e0e;
-
-    border: 1px solid #222;
-
-    padding: 20px;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    max-width: 900px;
+    margin: auto;
 }
 
 .control label {
     display: block;
-
-    color: #666;
-
-    font-size: 9px;
-
-    letter-spacing: 3px;
-
+    color: #777;
+    font-size: 10px;
+    letter-spacing: 2px;
     margin-bottom: 8px;
 }
 
-select {
+.control select {
     width: 100%;
-
     padding: 15px;
-
-    background: #080808;
-
+    background: #111;
     color: white;
-
     border: 1px solid #333;
-
-    outline: none;
-
-    cursor: pointer;
+    border-radius: 8px;
 }
 
 #raceButton {
+    grid-column: 1 / -1;
+    padding: 17px;
+    background: #ff3030;
     border: none;
-
-    background: white;
-
-    color: black;
-
+    color: white;
+    font-size: 16px;
     font-weight: bold;
-
     letter-spacing: 3px;
-
     cursor: pointer;
-
-    transition: 0.3s;
+    border-radius: 8px;
 }
 
 #raceButton:hover {
-    background: #aaa;
+    background: white;
+    color: black;
 }
 
-
-/* RACE INFO */
+/* =========================================================
+   RACE INFO
+   ========================================================= */
 
 .race-info {
     text-align: center;
-
-    padding: 40px 0 30px;
+    margin: 40px 0 20px;
 }
 
 #raceStatus {
-    color: #666;
-
-    font-size: 11px;
-
-    letter-spacing: 5px;
+    color: #ff3030;
+    font-weight: bold;
+    letter-spacing: 4px;
 }
 
 #raceWinner {
-    margin-top: 12px;
-
-    font-size: 28px;
-
+    font-size: 25px;
     font-weight: bold;
+    margin-top: 8px;
 }
 
-
-/* TRACK */
+/* =========================================================
+   RACE TRACK
+   ========================================================= */
 
 .race-track {
-    height: 400px;
-
     position: relative;
-
-    overflow: hidden;
-
-    border: 1px solid #282828;
-
+    max-width: 1100px;
+    height: 330px;
+    margin: auto;
     background:
         repeating-linear-gradient(
             90deg,
-            #111 0px,
-            #111 80px,
-            #0c0c0c 80px,
-            #0c0c0c 160px
+            #101010 0px,
+            #101010 40px,
+            #121212 40px,
+            #121212 80px
         );
+    border: 1px solid #292929;
+    overflow: hidden;
 }
 
-.race-track::before {
-    content: "";
+.lane {
+    height: 50%;
+    position: relative;
+    border-bottom: 1px dashed #333;
+}
 
+.lane-label {
     position: absolute;
-
-    left: 0;
-    right: 0;
-
-    top: 50%;
-
-    border-top: 1px dashed #333;
+    left: 20px;
+    top: 15px;
+    color: #777;
+    font-size: 11px;
 }
 
+.race-car {
+    position: absolute;
+    left: 25px;
+    top: 50px;
+    width: 60px;
+    height: 30px;
+    transition: none;
+}
 
-/* FINISH MARKERS */
+.car-body {
+    background: #ff3030;
+    height: 22px;
+    border-radius: 6px;
+    text-align: center;
+    line-height: 22px;
+    font-weight: bold;
+}
+
+.car-roof {
+    position: absolute;
+    width: 30px;
+    height: 13px;
+    background: #ff3030;
+    top: -8px;
+    left: 15px;
+    border-radius: 8px 8px 0 0;
+}
+
+.wheel {
+    position: absolute;
+    width: 12px;
+    height: 12px;
+    background: #050505;
+    border-radius: 50%;
+    bottom: -5px;
+    border: 2px solid #777;
+}
+
+.wheel-left {
+    left: 8px;
+}
+
+.wheel-right {
+    right: 8px;
+}
+
+.car2 .car-body,
+.car2 .car-roof {
+    background: white;
+    color: black;
+}
 
 .track-distance {
     position: absolute;
-
     top: 0;
-
-    height: 100%;
-
-    border-left: 2px dashed #555;
-
-    z-index: 2;
-
-    color: #555;
-
+    bottom: 0;
+    width: 1px;
+    background: #444;
+    color: #666;
     font-size: 10px;
-
-    padding-left: 8px;
-
-    padding-top: 12px;
-
-    letter-spacing: 2px;
+    padding-top: 10px;
 }
 
 .quarter-marker {
@@ -423,221 +558,72 @@ select {
 }
 
 .finish-marker {
-    left: 92%;
-
-    border-left: 4px solid white;
-
-    color: white;
+    right: 10%;
 }
 
-
-/* LANES */
-
-.lane {
-    position: relative;
-
-    height: 50%;
-
-    border-bottom: 1px solid #191919;
-}
-
-.lane-label {
-    position: absolute;
-
-    top: 15px;
-    left: 20px;
-
-    color: #666;
-
-    font-size: 10px;
-
-    letter-spacing: 2px;
-
-    z-index: 8;
-}
-
-
-/* CARS */
-
-.race-car {
-    position: absolute;
-
-    left: 25px;
-    top: 65px;
-
-    width: 105px;
-    height: 38px;
-
-    z-index: 6;
-}
-
-.car-body {
-    position: absolute;
-
-    width: 100px;
-    height: 30px;
-
-    top: 8px;
-
-    background: linear-gradient(
-        180deg,
-        #eeeeee,
-        #888
-    );
-
-    border-radius: 9px 25px 8px 8px;
-
-    color: black;
-
-    font-weight: bold;
-
-    padding-left: 75px;
-    padding-top: 8px;
-
-    box-shadow:
-        0 0 20px rgba(255,255,255,0.2);
-}
-
-.car-roof {
-    position: absolute;
-
-    left: 22px;
-    top: 0;
-
-    width: 48px;
-    height: 18px;
-
-    background: #aaa;
-
-    border-radius: 18px 18px 0 0;
-}
-
-.wheel {
-    position: absolute;
-
-    width: 16px;
-    height: 16px;
-
-    bottom: -3px;
-
-    background: #050505;
-
-    border-radius: 50%;
-
-    z-index: 3;
-}
-
-.wheel-left {
-    left: 12px;
-}
-
-.wheel-right {
-    right: 12px;
-}
-
-
-/* SPEED */
+/* =========================================================
+   LIVE SPEED
+   ========================================================= */
 
 .speed-display {
     position: absolute;
-
     right: 20px;
-    top: 20px;
-
-    text-align: right;
-}
-
-.speed-display span {
-    font-size: 24px;
-
+    top: 15px;
+    font-size: 20px;
     font-weight: bold;
 }
 
 .speed-display small {
-    color: #666;
-
-    margin-left: 5px;
-
+    color: #777;
     font-size: 9px;
-
-    letter-spacing: 2px;
 }
-
-
-/* DISTANCE */
 
 .distance-display {
     position: absolute;
-
     right: 20px;
     bottom: 15px;
-
-    color: #666;
-
-    font-size: 11px;
+    color: #777;
 }
 
-.distance-display span {
-    color: #aaa;
-
-    font-size: 15px;
-}
-
-
-/* RESULTS */
+/* =========================================================
+   RESULTS
+   ========================================================= */
 
 .race-results {
+    max-width: 900px;
+    margin: 35px auto;
     display: grid;
-
-    grid-template-columns: 1fr 100px 1fr;
-
+    grid-template-columns: 1fr 80px 1fr;
     align-items: center;
-
-    margin-top: 25px;
+    gap: 15px;
 }
 
 .result-card {
-    background: #0e0e0e;
-
-    border: 1px solid #222;
-
+    background: #101010;
+    border: 1px solid #292929;
+    border-radius: 12px;
     padding: 25px;
-
     text-align: center;
 }
 
 .result-card span {
     display: block;
-
-    color: #777;
-
-    font-size: 11px;
-
-    letter-spacing: 2px;
+    color: #aaa;
 }
 
 .result-card strong {
     display: block;
-
-    margin-top: 12px;
-
-    font-size: 36px;
+    font-size: 35px;
+    margin: 10px 0;
 }
 
 .result-card small {
-    color: #555;
-
-    font-size: 9px;
-
-    letter-spacing: 2px;
+    color: #666;
 }
 
 .result-card div {
     margin-top: 15px;
-
-    color: #555;
-
-    font-size: 10px;
+    color: #777;
 }
 
 .result-card b {
@@ -646,172 +632,114 @@ select {
 
 .result-vs {
     text-align: center;
-
+    color: #ff3030;
     font-weight: bold;
-
-    color: #555;
 }
 
+/* =========================================================
+   FASTEST CARS
+   ========================================================= */
 
-/* FASTEST */
+.performance-section {
+    padding: 100px 8%;
+    background: #080808;
+}
 
 .fastest-grid {
-    margin-top: 45px;
-
     display: grid;
-
-    grid-template-columns:
-        repeat(4, 1fr);
-
-    gap: 15px;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 18px;
 }
 
 .fastest-card {
+    background: #101010;
+    border: 1px solid #252525;
     padding: 25px;
-
-    background: #0e0e0e;
-
-    border: 1px solid #222;
-
-    transition: 0.3s;
+    border-radius: 12px;
+    transition: 0.25s;
 }
 
 .fastest-card:hover {
-    transform: translateY(-7px);
-
-    border-color: #555;
+    transform: translateY(-6px);
+    border-color: #ff3030;
 }
 
 .fastest-rank {
-    color: #555;
-
+    color: #ff3030;
     font-size: 10px;
-
-    letter-spacing: 3px;
+    letter-spacing: 2px;
 }
 
 .fastest-card h3 {
     margin-top: 15px;
-
-    font-size: 20px;
 }
 
-.fastest-card .year {
-    color: #555;
-
+.year {
+    color: #666;
     margin-top: 5px;
 }
 
 .fastest-time {
-    margin-top: 25px;
-
-    font-size: 40px;
-
+    font-size: 35px;
     font-weight: bold;
+    margin-top: 20px;
 }
 
 .fastest-time small {
-    color: #555;
-
-    font-size: 9px;
-
+    display: block;
+    color: #666;
+    font-size: 10px;
     letter-spacing: 2px;
 }
 
 .fastest-stats {
     display: flex;
-
     justify-content: space-between;
-
-    border-top: 1px solid #222;
-
     margin-top: 20px;
-
     padding-top: 15px;
+    border-top: 1px solid #292929;
 }
 
 .fastest-stats span {
-    color: #555;
-
+    display: block;
+    color: #666;
     font-size: 9px;
 }
 
 .fastest-stats strong {
-    display: block;
-
-    margin-top: 5px;
+    font-size: 13px;
 }
 
-
-/* FOOTER */
+/* =========================================================
+   FOOTER
+   ========================================================= */
 
 footer {
-    border-top: 1px solid #222;
-
-    padding: 50px 7%;
-
+    padding: 50px 8%;
     display: flex;
-
     justify-content: space-between;
-
-    color: #555;
-
+    border-top: 1px solid #222;
+    color: #666;
+    letter-spacing: 2px;
     font-size: 10px;
-
-    letter-spacing: 3px;
 }
 
+/* =========================================================
+   MOBILE
+   ========================================================= */
 
-/* ANIMATIONS */
+@media (max-width: 800px) {
 
-@keyframes heroEnter {
-
-    from {
-        opacity: 0;
-
-        transform:
-            translateY(30px);
+    .header {
+        padding: 0 5%;
     }
-
-    to {
-        opacity: 1;
-
-        transform:
-            translateY(0);
-    }
-
-}
-
-@keyframes countdown {
-
-    0% {
-        transform: scale(1);
-        opacity: 0;
-    }
-
-    50% {
-        transform: scale(1.3);
-        opacity: 1;
-    }
-
-    100% {
-        transform: scale(1);
-        opacity: 1;
-    }
-
-}
-
-
-/* MOBILE */
-
-@media(max-width: 900px) {
 
     .header-right {
         display: none;
     }
 
     .hero {
-        padding-left: 25px;
+        padding: 60px 7%;
     }
 
     .hero-speed {
@@ -822,46 +750,37 @@ footer {
         grid-template-columns: 1fr;
     }
 
+    .stats div {
+        border-right: none;
+        border-bottom: 1px solid #222;
+    }
+
+    .spec-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
     .controls {
         grid-template-columns: 1fr;
     }
 
     #raceButton {
-        height: 55px;
-    }
-
-    .fastest-grid {
-        grid-template-columns: 1fr 1fr;
-    }
-
-}
-
-@media(max-width: 600px) {
-
-    .race-section,
-    .performance-section {
-        padding: 70px 20px;
-    }
-
-    .section-heading h2 {
-        font-size: 42px;
-    }
-
-    .hero h1 {
-        font-size: 90px;
-    }
-
-    .fastest-grid {
-        grid-template-columns: 1fr;
+        grid-column: auto;
     }
 
     .race-results {
         grid-template-columns: 1fr;
-        gap: 10px;
     }
 
     .result-vs {
-        display: none;
+        padding: 10px;
     }
 
+    .fastest-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .search-heading h2,
+    .section-heading h2 {
+        font-size: 40px;
+    }
 }
