@@ -4,365 +4,215 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>CarZone Performance</title>
+    <title>CARZONE — Performance Database</title>
 
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-<header class="header">
+    <!-- HEADER -->
 
-    <div class="logo">
-        CAR<span>ZONE</span>
-    </div>
+    <header class="header">
 
-    <div class="header-right">
-        PERFORMANCE DATABASE
-    </div>
-
-</header>
-
-
-<section class="hero">
-
-    <div class="hero-content">
-
-        <div class="eyebrow">
-            CARZONE PERFORMANCE
+        <div class="logo">
+            CAR<span>ZONE</span>
         </div>
 
-        <h1>
-            PURE<br>
-            <span>SPEED.</span>
-        </h1>
+        <nav>
+            <a href="#home">HOME</a>
+            <a href="#search-section">CARS</a>
+            <a href="#fastest">FASTEST</a>
+        </nav>
 
-        <p>
-            Vergelijk auto's op acceleratie, topsnelheid
-            en afstand. Kies twee auto's en laat ze racen.
-        </p>
+    </header>
 
-        <a href="#race" class="hero-button">
-            START RACE
-        </a>
 
-    </div>
+    <!-- HERO -->
 
-    <div class="hero-speed">
-        <div class="speed-number">300</div>
-        <div class="speed-unit">KM/H</div>
-    </div>
+    <main>
 
-</section>
+        <section id="home" class="hero">
 
+            <div class="hero-content">
 
-<section class="stats">
-
-    <div>
-        <strong id="carCount">0</strong>
-        <span>AUTO'S</span>
-    </div>
-
-    <div>
-        <strong>1 MI</strong>
-        <span>RACEBAAN</span>
-    </div>
-
-    <div>
-        <strong>6</strong>
-        <span>TESTS</span>
-    </div>
-
-</section>
-
-
-<section id="race" class="race-section">
-
-    <div class="section-heading">
-
-        <div class="eyebrow">
-            PERFORMANCE TEST
-        </div>
-
-        <h2>
-            RACE
-            <span>SIMULATOR</span>
-        </h2>
-
-        <p>
-            Kies je auto's, afstand en eenheid.
-        </p>
-
-    </div>
-
-
-    <div class="controls">
-
-        <div class="control">
-
-            <label>AFSTAND</label>
-
-            <select id="distanceSelect">
-
-                <option value="quarter">
-                    ¼ MILE
-                </option>
-
-                <option value="half">
-                    ½ MILE
-                </option>
-
-                <option value="mile">
-                    1 MILE
-                </option>
-
-            </select>
-
-        </div>
-
-
-        <div class="control">
-
-            <label>EENHEID</label>
-
-            <select id="unitSelect">
-
-                <option value="kmh">
-                    KM/H + KM
-                </option>
-
-                <option value="mph">
-                    MPH + MILES
-                </option>
-
-            </select>
-
-        </div>
-
-
-        <div class="control">
-
-            <label>AUTO 1</label>
-
-            <select id="car1"></select>
-
-        </div>
-
-
-        <div class="control">
-
-            <label>AUTO 2</label>
-
-            <select id="car2"></select>
-
-        </div>
-
-
-        <button id="raceButton" onclick="startRace()">
-            RACE
-        </button>
-
-    </div>
-
-
-    <div class="race-info">
-
-        <div id="raceStatus">
-            READY
-        </div>
-
-        <div id="raceWinner">
-            Kies twee auto's
-        </div>
-
-    </div>
-
-
-    <div class="race-track">
-
-        <div class="track-distance quarter-marker">
-            ¼
-        </div>
-
-        <div class="track-distance half-marker">
-            ½
-        </div>
-
-        <div class="track-distance finish-marker">
-            FINISH
-        </div>
-
-
-        <div class="lane">
-
-            <div class="lane-label" id="laneName1">
-                AUTO 1
-            </div>
-
-            <div class="race-car car1">
-
-                <div class="car-roof"></div>
-
-                <div class="car-body">
-                    1
+                <div class="eyebrow">
+                    CARZONE PERFORMANCE DATABASE
                 </div>
 
-                <div class="wheel wheel-left"></div>
-                <div class="wheel wheel-right"></div>
+                <h1>
+                    FIND YOUR<br>
+                    <span>PERFORMANCE.</span>
+                </h1>
+
+                <p>
+                    Zoek auto's en ontdek hun prestaties,
+                    topsnelheid, vermogen en acceleratie.
+                </p>
 
             </div>
 
-            <div class="speed-display">
 
-                <span id="speed1">
-                    0
-                </span>
+            <!-- GROTE ZOEKBALK -->
 
-                <small id="speedUnit1">
-                    KM/H
-                </small>
+            <section id="search-section" class="search-section">
 
-            </div>
+                <div class="search-box">
 
-            <div class="distance-display">
-                <span id="distance1">0</span>
-                <small id="distanceUnit1">KM</small>
-            </div>
+                    <span class="search-icon">⌕</span>
 
-        </div>
+                    <input
+                        type="text"
+                        id="carSearch"
+                        placeholder="Zoek een auto... bijvoorbeeld Audi RS6"
+                        autocomplete="off"
+                    >
 
+                    <button id="clearSearch">
+                        ×
+                    </button>
 
-        <div class="lane">
-
-            <div class="lane-label" id="laneName2">
-                AUTO 2
-            </div>
-
-            <div class="race-car car2">
-
-                <div class="car-roof"></div>
-
-                <div class="car-body">
-                    2
                 </div>
 
-                <div class="wheel wheel-left"></div>
-                <div class="wheel wheel-right"></div>
+
+                <!-- ZOEKRESULTATEN -->
+
+                <div
+                    id="searchSuggestions"
+                    class="search-suggestions">
+                </div>
+
+            </section>
+
+        </section>
+
+
+
+        <!-- AUTO DETAILS -->
+
+        <section
+            id="carDetails"
+            class="car-details-section">
+
+            <div class="empty-state">
+
+                <div class="empty-icon">
+                    🚘
+                </div>
+
+                <h2>
+                    Zoek een auto
+                </h2>
+
+                <p>
+                    Typ hierboven een automodel om de
+                    prestaties te bekijken.
+                </p>
 
             </div>
 
-            <div class="speed-display">
+        </section>
 
-                <span id="speed2">
-                    0
-                </span>
 
-                <small id="speedUnit2">
-                    KM/H
-                </small>
+
+        <!-- SNELSTE AUTO'S -->
+
+        <section
+            id="fastest"
+            class="fastest-section">
+
+            <div class="section-heading">
+
+                <div class="eyebrow">
+                    PERFORMANCE
+                </div>
+
+                <h2>
+                    FASTEST
+                    <span>CARS</span>
+                </h2>
+
+                <p>
+                    De snelste auto's uit de database
+                    op basis van 0–100 km/h.
+                </p>
 
             </div>
 
-            <div class="distance-display">
-                <span id="distance2">0</span>
-                <small id="distanceUnit2">KM</small>
+
+            <div
+                id="fastestCars"
+                class="fastest-grid">
             </div>
 
-        </div>
-
-    </div>
+        </section>
 
 
-    <div class="race-results">
 
-        <div class="result-card">
+        <!-- DATABASE INFO -->
 
-            <span id="resultCar1">
-                AUTO 1
-            </span>
+        <section class="database-section">
 
-            <strong id="resultTime1">
-                —
-            </strong>
+            <div class="database-card">
 
-            <small>
-                EINDTIJD
-            </small>
+                <div>
+                    <span class="database-number"
+                          id="carCount">
+                        0
+                    </span>
 
-            <div>
-                TOP:
-                <b id="resultTop1">—</b>
+                    <span class="database-label">
+                        AUTO'S IN DATABASE
+                    </span>
+                </div>
+
+
+                <div>
+                    <span class="database-number">
+                        0–100
+                    </span>
+
+                    <span class="database-label">
+                        ACCELERATIE TEST
+                    </span>
+                </div>
+
+
+                <div>
+                    <span class="database-number">
+                        KM/H
+                    </span>
+
+                    <span class="database-label">
+                        TOPSNELHEID
+                    </span>
+                </div>
+
             </div>
 
+        </section>
+
+    </main>
+
+
+
+    <!-- FOOTER -->
+
+    <footer>
+
+        <div class="logo">
+            CAR<span>ZONE</span>
         </div>
 
+        <p>
+            PURE PERFORMANCE
+        </p>
 
-        <div class="result-vs">
-            VS
-        </div>
-
-
-        <div class="result-card">
-
-            <span id="resultCar2">
-                AUTO 2
-            </span>
-
-            <strong id="resultTime2">
-                —
-            </strong>
-
-            <small>
-                EINDTIJD
-            </small>
-
-            <div>
-                TOP:
-                <b id="resultTop2">—</b>
-            </div>
-
-        </div>
-
-    </div>
-
-</section>
+    </footer>
 
 
-<section class="performance-section">
 
-    <div class="section-heading">
-
-        <div class="eyebrow">
-            THE NUMBERS
-        </div>
-
-        <h2>
-            FASTEST
-            <span>CARS</span>
-        </h2>
-
-    </div>
-
-
-    <div id="fastestCars" class="fastest-grid"></div>
-
-</section>
-
-
-<footer>
-
-    <div class="logo">
-        CAR<span>ZONE</span>
-    </div>
-
-    <div>
-        PURE PERFORMANCE
-    </div>
-
-</footer>
-
-
-<script src="script.js"></script>
+    <script src="script.js"></script>
 
 </body>
 </html>
